@@ -8,6 +8,8 @@ A collection of GitHub Copilot custom skills and reference documentation for .NE
 - [Skills](#skills)
   - [MAUI Workload Discovery](#maui-workload-discovery)
   - [MAUI Release Notes](#maui-release-notes)
+  - [iOS Slim Bindings](#ios-slim-bindings)
+  - [Android Slim Bindings](#android-slim-bindings)
 - [Documentation](#documentation)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
@@ -30,7 +32,7 @@ Copilot Skills are structured prompts and workflows that extend GitHub Copilot's
 
 ### MAUI Workload Discovery
 
-> **Location:** [`.github/skills/maui-workload-discovery/SKILL.md`](.github/skills/maui-workload-discovery/SKILL.md)
+> **Location:** [`.claude/skills/maui-workload-discovery/SKILL.md`](.claude/skills/maui-workload-discovery/SKILL.md)
 
 Discovers .NET SDK versions, workload sets, manifest versions, and workload dependencies for MAUI development environments.
 
@@ -51,7 +53,7 @@ Discovers .NET SDK versions, workload sets, manifest versions, and workload depe
 
 ### MAUI Release Notes
 
-> **Location:** [`.github/skills/maui-release-notes/SKILL.md`](.github/skills/maui-release-notes/SKILL.md)
+> **Location:** [`.claude/skills/maui-release-notes/SKILL.md`](.claude/skills/maui-release-notes/SKILL.md)
 
 Generates and maintains formatted release notes documentation for .NET MAUI workload releases.
 
@@ -68,6 +70,58 @@ release-notes/
 ├── maui-release-notes-YYYYMMDD.md  # Dated release notes (most recent)
 └── ...                             # Historical release notes
 ```
+
+---
+
+### iOS Slim Bindings
+
+> **Location:** [`.claude/skills/ios-slim-bindings/SKILL.md`](.claude/skills/ios-slim-bindings/SKILL.md)
+
+Creates and updates slim/native platform interop bindings for iOS using the Native Library Interop (NLI) approach. Guides through Swift/Objective-C wrapper creation, Xcode project configuration, API definition generation, and integration into .NET MAUI apps.
+
+**Use this skill when you need to:**
+- Create iOS bindings for a native library
+- Wrap an iOS SDK for use in .NET MAUI
+- Create a Swift wrapper exposing native APIs to C#
+- Integrate xcframeworks into .NET projects
+- Update bindings when native SDKs change
+- Troubleshoot iOS binding build/runtime errors
+
+**Key Features:**
+- Complete project structure setup
+- Swift wrapper implementation patterns
+- CocoaPods and Swift Package Manager integration
+- Objective Sharpie API definition generation
+- Async/await support via completion handlers
+- Comprehensive troubleshooting guide
+
+---
+
+### Android Slim Bindings
+
+> **Location:** [`.claude/skills/android-slim-bindings/SKILL.md`](.claude/skills/android-slim-bindings/SKILL.md)
+
+Creates and updates slim/native platform interop bindings for Android using the Native Library Interop (NLI) approach. Guides through Java/Kotlin wrapper creation, Gradle project configuration, Maven dependency resolution, and integration into .NET MAUI apps.
+
+**Use this skill when you need to:**
+- Create Android bindings for a native library
+- Wrap an Android SDK for use in .NET MAUI
+- Create a Java/Kotlin wrapper exposing native APIs to C#
+- Integrate AAR/JAR files into .NET projects
+- Resolve Maven dependency conflicts
+- Fix "Java dependency is not satisfied" errors (XA4241/XA4242)
+- Update bindings when native SDKs change
+- Troubleshoot Android binding build/runtime errors
+
+**Key Features:**
+- Complete project structure setup with Gradle Wrapper
+- Java and Kotlin wrapper implementation patterns
+- Comprehensive Maven dependency analysis
+- NuGet package mapping for common Android libraries
+- Metadata.xml transforms for binding customization
+- Java Dependency Verification support (.NET 9+)
+- Callback interface patterns for async operations
+- Comprehensive troubleshooting guide
 
 ## Documentation
 
@@ -93,12 +147,16 @@ Reference guides for .NET MAUI development tasks:
 
 ```
 maui-skillz/
-├── .github/
-│   └── skills/                      # Copilot custom skills
+├── .claude/
+│   └── skills/                      # Copilot/Claude custom skills
 │       ├── maui-release-notes/
 │       │   └── SKILL.md             # Release notes generation skill
-│       └── maui-workload-discovery/
-│           └── SKILL.md             # Workload discovery skill
+│       ├── maui-workload-discovery/
+│       │   └── SKILL.md             # Workload discovery skill
+│       ├── ios-slim-bindings/
+│       │   └── SKILL.md             # iOS slim bindings skill
+│       └── android-slim-bindings/
+│           └── SKILL.md             # Android slim bindings skill
 ├── docs/                            # Reference documentation
 │   ├── android-bindings-guide.md    # Android binding tutorials
 │   ├── ios-bindings-guide.md        # iOS binding tutorials
@@ -113,7 +171,7 @@ maui-skillz/
 
 Contributions are welcome! Here's how you can help:
 
-1. **Add new skills** - Create a new folder under `.github/skills/` with a `SKILL.md` file
+1. **Add new skills** - Create a new folder under `.claude/skills/` with a `SKILL.md` file
 2. **Improve documentation** - Enhance the guides in `docs/`
 3. **Report issues** - File bugs or suggest improvements via GitHub Issues
 4. **Share feedback** - Let us know how these skills work for your workflows
