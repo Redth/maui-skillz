@@ -1,0 +1,17 @@
+{
+  "name": "redth",
+  "description": "Redth's extra special plugins for things like .NET MAUI development assistance",
+  "owner": {
+    "name": "redth",
+    "url": "https://github.com/redth"
+  },
+  "repository": "https://github.com/redth/maui-skillz",
+  "plugins": [
+    {
+      "name": "maui-skillz",
+      "source": "./",
+      "version": "1.0.0",
+      "description": "Experimental .NET MAUI development AI skill/prompts - C#, XAML, cross-platform mobile (iOS, Android) and desktop (MacCatalyst, Windows) apps"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "maui-skillz",
+  "version": "1.0.0",
+  "description": ".NET MAUI development toolkit with specialized skills agents covering C#, XAML, MVVM, UI Testing, performance optimization, and cross-platform best practices.",
+  "author": {
+    "name": "redth",
+    "url": "https://github.com/redth"
+  },
+  "repository": "https://github.com/redth/maui-skillz",
+  "skills": [
+    "./.claude/skills/maui-release-notes",
+    "./.claude/skills/dotnet-workload-info",
+    "./.claude/skills/android-slim-bindings",
+    "./.claude/skills/ios-slim-bindings"
+  ],
+  "agents": [
+  ]
+}
