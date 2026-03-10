@@ -1,7 +1,7 @@
 # .NET MAUI Workload Release Notes - March 10, 2026
 
 > **Date:** March 10, 2026  
-> **Source:** NuGet.org workload manifests + Azure DevOps dotnet-workloads feed (live data)
+> **Source:** NuGet.org workload manifests and workload sets (live data)
 
 This document provides version information for the .NET MAUI workload updates published for this release.
 
@@ -11,9 +11,9 @@ This document provides version information for the .NET MAUI workload updates pu
 
 # .NET 11 (Preview 2)
 
-**Workload Set:** [Microsoft.NET.Workloads.11.0.100-preview.2](https://dev.azure.com/dnceng/public/_artifacts/feed/dotnet-workloads/NuGet/Microsoft.NET.Workloads.11.0.100-preview.2/overview/11.100.0-preview.2.26160.1) version `11.100.0-preview.2.26160.1` (CLI: `11.0.100-preview.2.26160.1`)
+**Workload Set:** [Microsoft.NET.Workloads.11.0.100-preview.2](https://www.nuget.org/packages/Microsoft.NET.Workloads.11.0.100-preview.2/11.100.0-preview.2.26160.1) version `11.100.0-preview.2.26160.1` (CLI: `11.0.100-preview.2.26160.1`)
 
-The Preview 2 workload set is available from the public Azure DevOps `dotnet-workloads` feed, while the individual Preview 2 manifest packages are published on NuGet.org. Official .NET 11 release metadata still reported Preview 1 at the time of writing.
+The Preview 2 workload set and the individual Preview 2 manifest packages are now published on NuGet.org. Official .NET 11 release metadata still reported Preview 1 at the time of writing.
 
 ## MAUI NuGet Packages
 
@@ -42,19 +42,15 @@ The following NuGet packages are the core .NET MAUI libraries. The **Implicit Ve
 
 ## Installation
 
-Because the Preview 2 workload set is currently available from the public Azure DevOps `dotnet-workloads` feed while the manifest packages are published on NuGet.org, include both sources when installing or updating workloads.
+Because the Preview 2 workload set and manifest packages are now available on NuGet.org, version-pinned installation commands can use the default NuGet source.
 
 ```bash
 # Update existing workloads to this version
 dotnet workload update \
-  --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-workloads/nuget/v3/index.json \
-  --source https://api.nuget.org/v3/index.json \
   --version 11.0.100-preview.2.26160.1
 
 # Or install specific workloads
 dotnet workload install maui ios maccatalyst android \
-  --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-workloads/nuget/v3/index.json \
-  --source https://api.nuget.org/v3/index.json \
   --version 11.0.100-preview.2.26160.1
 ```
 
@@ -114,7 +110,7 @@ Apple platform workloads require Xcode to be installed.
 
 ## Data Sources
 
-- [Microsoft.NET.Workloads.11.0.100-preview.2](https://dev.azure.com/dnceng/public/_artifacts/feed/dotnet-workloads/NuGet/Microsoft.NET.Workloads.11.0.100-preview.2/overview/11.100.0-preview.2.26160.1) version `11.100.0-preview.2.26160.1` (CLI: `11.0.100-preview.2.26160.1`)
+- [Microsoft.NET.Workloads.11.0.100-preview.2](https://www.nuget.org/packages/Microsoft.NET.Workloads.11.0.100-preview.2/11.100.0-preview.2.26160.1) version `11.100.0-preview.2.26160.1` (CLI: `11.0.100-preview.2.26160.1`)
 - [Microsoft.NET.Sdk.Maui.Manifest-11.0.100-preview.2](https://www.nuget.org/packages/Microsoft.NET.Sdk.Maui.Manifest-11.0.100-preview.2/11.0.0-preview.2.26152.10) version `11.0.0-preview.2.26152.10`
 - [Microsoft.NET.Sdk.iOS.Manifest-11.0.100-preview.2](https://www.nuget.org/packages/Microsoft.NET.Sdk.iOS.Manifest-11.0.100-preview.2/26.2.11425-net11-p2) version `26.2.11425-net11-p2`
 - [Microsoft.NET.Sdk.MacCatalyst.Manifest-11.0.100-preview.2](https://www.nuget.org/packages/Microsoft.NET.Sdk.MacCatalyst.Manifest-11.0.100-preview.2/26.2.11425-net11-p2) version `26.2.11425-net11-p2`
