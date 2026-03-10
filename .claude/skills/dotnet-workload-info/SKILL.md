@@ -1,6 +1,9 @@
 ---
 name: dotnet-workload-info
-description: Discover .NET SDK versions, workload sets, manifest versions, and workload dependencies (Xcode, JDK, Android SDK) from live NuGet APIs. Use when asked about: .NET SDK requirements/versions, workload set versions, workload manifest versions, Xcode version requirements, JDK version requirements, Android SDK packages, or MAUI NuGet package versions. Triggers on questions like "What Xcode is required for .NET 10?" or "What's the latest workload set?"
+description: >-
+  Discover .NET SDK versions, workload sets, manifest versions, and workload dependencies (Xcode, JDK, Android SDK) from live NuGet APIs. Use when asked about: .NET SDK
+  requirements/versions, workload set versions, workload manifest versions, Xcode version requirements, JDK version requirements, Android SDK packages, or MAUI NuGet package
+  versions. Triggers on questions like "What Xcode is required for .NET 10?" or "What's the latest workload set?"
 ---
 
 # .NET Workload Info Discovery
