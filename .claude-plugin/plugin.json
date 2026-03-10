@@ -8,10 +8,10 @@
   },
   "repository": "https://github.com/redth/maui-skillz",
   "skills": [
-    "./.claude/skills/maui-release-notes",
-    "./.claude/skills/dotnet-workload-info",
-    "./.claude/skills/android-slim-bindings",
-    "./.claude/skills/ios-slim-bindings"
+    "./.agents/skills/maui-release-notes",
+    "./.agents/skills/dotnet-workload-info",
+    "./.agents/skills/android-slim-bindings",
+    "./.agents/skills/ios-slim-bindings"
   ],
   "agents": [
   ]
