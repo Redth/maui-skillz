@@ -1,6 +1,9 @@
 ---
 name: dotnet-workload-info
-description: Discover .NET SDK versions, workload sets, manifest versions, and workload dependencies (Xcode, JDK, Android SDK) from live NuGet APIs. Use when asked about: .NET SDK requirements/versions, workload set versions, workload manifest versions, Xcode version requirements, JDK version requirements, Android SDK packages, or MAUI NuGet package versions. Triggers on questions like "What Xcode is required for .NET 10?" or "What's the latest workload set?"
+description: >-
+  Discover .NET SDK versions, workload sets, manifest versions, and workload dependencies (Xcode, JDK, Android SDK) from live NuGet APIs. Use when asked about: .NET SDK
+  requirements/versions, workload set versions, workload manifest versions, Xcode version requirements, JDK version requirements, Android SDK packages, or MAUI NuGet package
+  versions. Triggers on questions like "What Xcode is required for .NET 10?" or "What's the latest workload set?"
 ---
 
 # .NET Workload Info Discovery
@@ -38,18 +41,30 @@ curl -s "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/release
 ```
 
 Extract `latest-sdk` and derive SDK band:
-- `10.0.102` → band `10.0.100` (hundreds digit)
+- `10.0.103` → band `10.0.100` (hundreds digit)
 - `10.0.205` → band `10.0.200`
 
-### Step 2: Find Workload Set Package
+### Step 2: Find Workload Set Package / Version
 
-```bash
-curl -s "https://azuresearch-usnc.nuget.org/query?q=Microsoft.NET.Workloads.{MAJOR}.0&prerelease=false&semVerLevel=2.0.0"
+Use the dotnet workload search version command to discover the latest workload set version:
+
+```
+dotnet workload search version --format json --take 1
+# Returns: [{"workloadVersion":"10.0.103"}]
 ```
 
-Filter: Match `Microsoft.NET.Workloads.{major}.{band}`, exclude `.Msi.*`, pick highest version.
+```
+dotnet workload search version --format json --take 1 | ConvertFrom-Json
+```
 
-**Version conversion**: NuGet `10.102.0` → CLI `10.0.102` (swap middle segments)
+The returned workloadVersion is the CLI version to use with --version flag.
+
+**Version conversion**:
+To convert this to the NuGet package version (needed for Steps 3-4):
+
+CLI 10.0.103 → NuGet 10.103.0 (remove middle .0., combine)
+The NuGet package is: Microsoft.NET.Workloads.{band} where band = CLI version (e.g., Microsoft.NET.Workloads.10.0.100)
+
 
 ### Step 3: Download Workload Set Manifest
 
