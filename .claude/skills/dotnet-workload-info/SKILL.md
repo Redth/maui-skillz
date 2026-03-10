@@ -45,9 +45,15 @@ Extract `latest-sdk` and derive SDK band:
 
 Use the dotnet workload search version command to discover the latest workload set version:
 
+```
 dotnet workload search version --format json --take 1
 # Returns: [{"workloadVersion":"10.0.103"}]
+```
+
+```
 dotnet workload search version --format json --take 1 | ConvertFrom-Json
+```
+
 The returned workloadVersion is the CLI version to use with --version flag.
 
 **Version conversion**:
