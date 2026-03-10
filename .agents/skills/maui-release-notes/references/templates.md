@@ -70,30 +70,9 @@ This document provides version information for .NET MAUI and related platform wo
 ```markdown
 # .NET {major}
 
-**Workload Set:** [Microsoft.NET.Workloads.{major}.0.{band}](https://www.nuget.org/packages/Microsoft.NET.Workloads.{major}.0.{band}/{nuget_version}) version `{nuget_version}`
+## Workloads
 
-## MAUI NuGet Packages
-
-The following NuGet packages are the core .NET MAUI libraries. The **Implicit Version** is bundled with the workload, while **Latest Version** may be newer due to out-of-band releases.
-
-| Package | Implicit Version | Latest Version | Release Notes |
-|---------|------------------|----------------|---------------|
-| Microsoft.Maui.Controls | [{workload_version}]({nuget_link}) | [{latest_version}]({nuget_link}) | [GitHub]({release_link}) |
-| Microsoft.Maui.Controls.Compatibility | [{workload_version}]({nuget_link}) | [{latest_version}]({nuget_link}) | |
-| Microsoft.Maui.Essentials | [{workload_version}]({nuget_link}) | [{latest_version}]({nuget_link}) | |
-| Microsoft.Maui.Graphics | [{workload_version}]({nuget_link}) | [{latest_version}]({nuget_link}) | |
-| Microsoft.Maui.Maps | [{workload_version}]({nuget_link}) | [{latest_version}]({nuget_link}) | |
-
-## Workload Versions
-
-| Workload | Full ID | Version | SDK Band | Links |
-|----------|---------|---------|----------|-------|
-| **MAUI** | Microsoft.NET.Sdk.Maui | {version} | {band} | [NuGet]({manifest_link}) · [Release]({release_link}) |
-| **iOS** | Microsoft.NET.Sdk.iOS | {version} | {band} | [NuGet]({manifest_link}) · [Release]({apple_release_link}) |
-| **Mac Catalyst** | Microsoft.NET.Sdk.MacCatalyst | {version} | {band} | [NuGet]({manifest_link}) · [Release]({apple_release_link}) |
-| **Android** | Microsoft.NET.Sdk.Android | {version} | {band} | [NuGet]({manifest_link}) · [Release]({release_link}) |
-| **tvOS** | Microsoft.NET.Sdk.tvOS | {version} | {band} | [NuGet]({manifest_link}) · [Release]({apple_release_link}) |
-| **macOS** | Microsoft.NET.Sdk.macOS | {version} | {band} | [NuGet]({manifest_link}) · [Release]({apple_release_link}) |
+**Workload Set:** [Microsoft.NET.Workloads.{major}.0.{band}](https://www.nuget.org/packages/Microsoft.NET.Workloads.{major}.0.{band}/{nuget_version})
 
 ## Installation
 
@@ -103,14 +82,40 @@ dotnet workload update --version {cli_version}
 dotnet workload install maui ios maccatalyst android --version {cli_version}
 \`\`\`
 
+## Workload Versions
+
+| Workload | Full ID | Version | SDK Band | Links |
+|----------|---------|---------|----------|-------|
+| **MAUI** | Microsoft.NET.Sdk.Maui | {version} | {band} | [NuGet]({manifest_link}) · [Release]({dotnet_maui_release_link}) |
+| **iOS** | Microsoft.NET.Sdk.iOS | {version} | {band} | [NuGet]({manifest_link}) · [Release]({dotnet_macios_release_link}) |
+| **Mac Catalyst** | Microsoft.NET.Sdk.MacCatalyst | {version} | {band} | [NuGet]({manifest_link}) · [Release]({dotnet_macios_release_link}) |
+| **Android** | Microsoft.NET.Sdk.Android | {version} | {band} | [NuGet]({manifest_link}) · [Release]({dotnet_android_release_link}) |
+| **tvOS** | Microsoft.NET.Sdk.tvOS | {version} | {band} | [NuGet]({manifest_link}) · [Release]({dotnet_macios_release_link}) |
+| **macOS** | Microsoft.NET.Sdk.macOS | {version} | {band} | [NuGet]({manifest_link}) · [Release]({dotnet_macios_release_link}) |
+
+
+
+## MAUI NuGet Packages
+
+The following NuGet packages are the core .NET MAUI libraries. The **Implicit Version** is bundled with the workload, while **Latest Version** may be newer due to out-of-band releases.
+
+| Package | Implicit Version | Latest Version |
+|---------|------------------|----------------|
+| Microsoft.Maui.Controls | [{workload_version}]({nuget_link}) | [{latest_version}]({nuget_link}) |
+| Microsoft.Maui.Controls.Compatibility | [{workload_version}]({nuget_link}) | [{latest_version}]({nuget_link}) |
+| Microsoft.Maui.Essentials | [{workload_version}]({nuget_link}) | [{latest_version}]({nuget_link}) |
+| Microsoft.Maui.Graphics | [{workload_version}]({nuget_link}) | [{latest_version}]({nuget_link}) |
+| Microsoft.Maui.Maps | [{workload_version}]({nuget_link}) | [{latest_version}]({nuget_link}) |
+
+
 ## Apple Platform Dependencies (iOS, Mac Catalyst, tvOS, macOS)
 
-| Workload | Xcode Requirement | Recommended Xcode | Apple SDK |
-|----------|-------------------|-------------------|-----------|
-| iOS | ≥ {min_version} | {recommended} | {sdk_version} |
-| Mac Catalyst | ≥ {min_version} | {recommended} | {sdk_version} |
-| tvOS | ≥ {min_version} | {recommended} | {sdk_version} |
-| macOS | ≥ {min_version} | {recommended} | {sdk_version} |
+| Workload | Xcode Requirement | Recommended Xcode |
+|----------|-------------------|-------------------|
+| iOS | ≥ {min_version} | {recommended} |
+| Mac Catalyst | ≥ {min_version} | {recommended} |
+| tvOS | ≥ {min_version} | {recommended} |
+| macOS | ≥ {min_version} | {recommended} |
 
 ## Android Dependencies
 
@@ -144,23 +149,6 @@ dotnet workload install maui ios maccatalyst android --version {cli_version}
 | **Windows SDK Build Tools** | ≥ {version} | {version} |
 | **Win2D** | ≥ {version} | {version} |
 | **WebView2** | ≥ {version} | {version} |
-
-## Appium Testing Dependencies (Optional)
-
-| Component | Minimum Version | Recommended |
-|-----------|-----------------|-------------|
-| **Appium** | ≥ {version} | {version} |
-| **Windows Driver** | ≥ {version} | {version} |
-| **XCUITest Driver** | ≥ {version} | {version} |
-| **Mac2 Driver** | ≥ {version} | {version} |
-| **UIAutomator2 Driver** | ≥ {version} | {version} |
-
-## Data Sources
-
-- [Microsoft.NET.Workloads.{major}.0.{band}]({nuget_link}) version `{version}`
-- [Microsoft.NET.Sdk.Maui.Manifest-{band}]({nuget_link}) version `{version}`
-- [Microsoft.NET.Sdk.iOS.Manifest-{band}]({nuget_link}) version `{version}`
-- [Microsoft.NET.Sdk.Android.Manifest-{band}]({nuget_link}) version `{version}`
 ```
 
 ### Reference Section (End of Document)
@@ -186,4 +174,6 @@ For more information, see the [.NET Workload Sets documentation](https://learn.m
 | MAUI | [dotnet/maui](https://github.com/dotnet/maui) | [Releases](https://github.com/dotnet/maui/releases) |
 | iOS, Mac Catalyst, tvOS, macOS | [dotnet/macios](https://github.com/dotnet/macios) | [Releases](https://github.com/dotnet/macios/releases) |
 | Android | [dotnet/android](https://github.com/dotnet/android) | [Releases](https://github.com/dotnet/android/releases) |
+
+> NOTE: macios releases may not use exact versions in their name/tag... an example is: `dotnet-11.0.1xx-preview2-11425` - DO YOUR BEST to match the relevant release note link in this repo to the workload release version we are generating notes for.
 ```

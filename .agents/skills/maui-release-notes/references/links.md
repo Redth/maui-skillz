@@ -58,7 +58,7 @@ def apple_release_tag(workload_version, dotnet_major):
 Examples:
 - `26.2.10191` on .NET 10 → `dotnet-10.0.1xx-xcode26.2-10191`
 - `26.0.9783` on .NET 9 → `dotnet-9.0.1xx-xcode26.0-9783`
-
+- `26.2.11425-net11-p2` on .NET 11 → `dotnet-11.0.1xx-preview2-11425`
 ---
 
 ## Formatting Conventions
